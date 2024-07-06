@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crawler',
+    'company',
+    'location',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +78,18 @@ WSGI_APPLICATION = 'jobcrawler.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'job_crawler',  # نام دیتابیس شما
+        'USER': 'default',  # نام کاربری دیتابیس
+        'PASSWORD': 'secret',  # رمز عبور دیتابیس
+        'HOST': 'localhost',  # آدرس سرور دیتابیس
+        'PORT': '5432',  # پورت دیتابیس
+    },
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
 }
 
 
