@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import JobTag
 
-# Register your models here.
+admin.site.register(JobTag)

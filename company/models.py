@@ -19,8 +19,8 @@ class Company(models.Model):
     category = models.ForeignKey(CompanyCategory, on_delete=models.CASCADE)
     size = models.CharField(max_length=50)
     website = models.URLField()
-    established_year = models.IntegerField()
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    established_year = models.IntegerField(null=True, blank=True)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name_en
